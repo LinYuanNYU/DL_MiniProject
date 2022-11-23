@@ -1,0 +1,352 @@
+%File: formatting-instructions-latex-2023.tex
+%release 2023.0
+\documentclass[letterpaper]{article} % DO NOT CHANGE THIS
+\usepackage{aaai23}  % DO NOT CHANGE THIS
+\usepackage{times}  % DO NOT CHANGE THIS
+\usepackage{helvet}  % DO NOT CHANGE THIS
+\usepackage{courier}  % DO NOT CHANGE THIS
+\usepackage[hyphens]{url}  % DO NOT CHANGE THIS
+\usepackage{graphicx} % DO NOT CHANGE THIS
+\urlstyle{rm} % DO NOT CHANGE THIS
+\def\UrlFont{\rm}  % DO NOT CHANGE THIS
+\usepackage{natbib}  % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\usepackage{caption} % DO NOT CHANGE THIS AND DO NOT ADD ANY OPTIONS TO IT
+\frenchspacing  % DO NOT CHANGE THIS
+\setlength{\pdfpagewidth}{8.5in}  % DO NOT CHANGE THIS
+\setlength{\pdfpageheight}{11in}  % DO NOT CHANGE THIS
+%
+% These are recommended to typeset algorithms but not required. See the subsubsection on algorithms. Remove them if you don't have algorithms in your paper.
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+%
+% These are are recommended to typeset listings but not required. See the subsubsection on listing. Remove this block if you don't have listings in your paper.
+\usepackage{newfloat}
+\usepackage{listings}
+\DeclareCaptionStyle{ruled}{labelfont=normalfont,labelsep=colon,strut=off} % DO NOT CHANGE THIS
+\lstset{%
+	basicstyle={\footnotesize\ttfamily},% footnotesize acceptable for monospace
+	numbers=left,numberstyle=\footnotesize,xleftmargin=2em,% show line numbers, remove this entire line if you don't want the numbers.
+	aboveskip=0pt,belowskip=0pt,%
+	showstringspaces=false,tabsize=2,breaklines=true}
+\floatstyle{ruled}
+\newfloat{listing}{tb}{lst}{}
+\floatname{listing}{Listing}
+%
+% Keep the \pdfinfo as shown here. There's no need
+% for you to add the /Title and /Author tags.
+\pdfinfo{
+/TemplateVersion (2023.1)
+}
+
+% DISALLOWED PACKAGES
+% \usepackage{authblk} -- This package is specifically forbidden
+% \usepackage{balance} -- This package is specifically forbidden
+% \usepackage{color (if used in text)
+% \usepackage{CJK} -- This package is specifically forbidden
+% \usepackage{float} -- This package is specifically forbidden
+% \usepackage{flushend} -- This package is specifically forbidden
+% \usepackage{fontenc} -- This package is specifically forbidden
+% \usepackage{fullpage} -- This package is specifically forbidden
+% \usepackage{geometry} -- This package is specifically forbidden
+% \usepackage{grffile} -- This package is specifically forbidden
+% \usepackage{hyperref} -- This package is specifically forbidden
+% \usepackage{navigator} -- This package is specifically forbidden
+% (or any other package that embeds links such as navigator or hyperref)
+% \indentfirst} -- This package is specifically forbidden
+% \layout} -- This package is specifically forbidden
+% \multicol} -- This package is specifically forbidden
+% \nameref} -- This package is specifically forbidden
+% \usepackage{savetrees} -- This package is specifically forbidden
+% \usepackage{setspace} -- This package is specifically forbidden
+% \usepackage{stfloats} -- This package is specifically forbidden
+% \usepackage{tabu} -- This package is specifically forbidden
+% \usepackage{titlesec} -- This package is specifically forbidden
+% \usepackage{tocbibind} -- This package is specifically forbidden
+% \usepackage{ulem} -- This package is specifically forbidden
+% \usepackage{wrapfig} -- This package is specifically forbidden
+% DISALLOWED COMMANDS
+% \nocopyright -- Your paper will not be published if you use this command
+% \addtolength -- This command may not be used
+% \balance -- This command may not be used
+% \baselinestretch -- Your paper will not be published if you use this command
+% \clearpage -- No page breaks of any kind may be used for the final version of your paper
+% \columnsep -- This command may not be used
+% \newpage -- No page breaks of any kind may be used for the final version of your paper
+% \pagebreak -- No page breaks of any kind may be used for the final version of your paperr
+% \pagestyle -- This command may not be used
+% \tiny -- This is not an acceptable font size.
+% \vspace{- -- No negative value may be used in proximity of a caption, figure, table, section, subsection, subsubsection, or reference
+% \vskip{- -- No negative value may be used to alter spacing above or below a caption, figure, table, section, subsection, subsubsection, or reference
+
+\setcounter{secnumdepth}{0} %May be changed to 1 or 2 if section numbers are desired.
+
+% The file aaai23.sty is the style file for AAAI Press
+% proceedings, working notes, and technical reports.
+%
+
+% Title
+
+% Your title must be in mixed case, not sentence case.
+% That means all verbs (including short verbs like be, is, using,and go),
+% nouns, adverbs, adjectives should be capitalized, including both words in hyphenated terms, while
+% articles, conjunctions, and prepositions are lower case unless they
+% directly follow a colon or long dash
+\title{Report For Deep Learning Mini-Project}
+\author{
+    %Authors
+    % All authors must be in the same font size and format.
+    Lin Yuan\textsuperscript{\rm 1}
+    Xinyu Zhang\textsuperscript{\rm 2}
+}
+\affiliations{
+    %Afiliations
+    \textsuperscript{\rm 1}ly2279 N15583133\\
+    % If you have multiple authors and multiple affiliations
+    % use superscripts in text and roman font to identify them.
+    % For example,
+
+    % Sunil Issar, \textsuperscript{\rm 2}
+    % J. Scott Penberthy, \textsuperscript{\rm 3}
+    % George Ferguson,\textsuperscript{\rm 4}
+    % Hans Guesgen, \textsuperscript{\rm 5}.
+    % Note that the comma should be placed BEFORE the superscript for optimum readability
+
+    \textsuperscript{\rm 2}zx3630 N21619909
+%
+% See more examples next
+}
+
+%Example, Single Author, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\iffalse
+\title{My Publication Title --- Single Author}
+\author {
+    Author Name
+}
+\affiliations{
+    Affiliation\\
+    Affiliation Line 2\\
+    name@example.com
+}
+\fi
+
+\iffalse
+%Example, Multiple Authors, ->> remove \iffalse,\fi and place them surrounding AAAI title to use it
+\title{My Publication Title --- Multiple Authors}
+\author {
+    % Authors
+    First Author Name,\textsuperscript{\rm 1,\rm 2}
+    Second Author Name, \textsuperscript{\rm 2}
+    Third Author Name \textsuperscript{\rm 1}
+}
+\affiliations {
+    % Affiliations
+    \textsuperscript{\rm 1} Affiliation 1\\
+    \textsuperscript{\rm 2} Affiliation 2\\
+    firstAuthor@affiliation1.com, secondAuthor@affilation2.com, thirdAuthor@affiliation1.com
+}
+\fi
+
+
+% REMOVE THIS: bibentry
+% This is only needed to show inline citations in the guidelines document. You should not need it and can safely delete it.
+\usepackage{bibentry}
+% END REMOVE bibentry
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+The aim of this project is to create the modified residual network (ResNet) architecture that achieves the highest test accuracy on the CIFAR-10 image classification dataset while keeping model's parameter count to a maximum of 5 million. We did a series of training of models includes ResNet18. ResNet34, ResNet50. ResNet101 and ResNet152 first as baseline. Then, we proposed two self-modified model structure training with both SGD and Adam to compare the result. We have open-sourced our code to \url{https://github.com/LinYuanNYU/DL_MiniProject.git}\end{abstract}
+
+\section{Introduction}
+
+ResNet \cite{DBLP:journals/corr/HeZRS15} is a deep convolutional neural networks which sloved the exploding and vanishing gradient descent problem, so that increase the depth of these networks further in order to make the model more robust and enhance its performance. The architecture of ResNet is assuming that a neural network unit can learn any function, asymptotically, then it can learn the identity function as well.the gradients can flow directly through the skip connections backwards from later layers to initial filters.
+
+The CIFAR-10 dataset consists of 6000 images per class in 10 classes totaling 60000 32x32 color images. Each training batch and test batch in the dataset has 10,000 photos, and there are five training batches total.
+
+By randomly rotating and cropping the provided picture data, \cite{Wang_2017_CVPR} carry out some basic data augmentation. To do this, they define a torchvision transform. The PyTorch documentation has information on all the transformations that are employed to pre-process and enhance data. We download and choose the training and test datasets and prepare data loaders for further use.
+
+We utilized codes open-sourced by \cite{kuangliupytorch-cifar} and trained two self-defined ResNet with two kinds of optimizers: SGD with momentum and Adam. Also, we utilize CrossEntropyLoss as the Loss function in training both structures.
+\section{Traditional ResNet Series}
+In this section, we trained ResNet18 and ResNet34 for 50 epochs, and ResNet101, ResNet152 for 40 epochs and we get results shown in Figure 1-4 and Table 1
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{1.png}
+	\caption{Losses and Acces for ResNet18}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{2.png}
+	\caption{Losses and Acces for ResNet34}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{4.png}
+	\caption{Losses and Acces for ResNet101}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\columnwidth]{5.png}
+	\caption{Losses and Acces for ResNet152}
+\end{figure}
+\begin{table}[t]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    ResNet18  & 89.810\%  & 86.14\%  \\
+    ResNet34  & 93.500\%  & 89.83\%  \\
+    ResNet101  & 94.718\%  & 90.66\%  \\
+    ResNet152  & 94.958\%  & 90.85\%  \\
+	\end{tabular}
+	\caption{Classical ResNet on CIFAR-10 We Trained}
+\end{table}
+
+\section{Self-Modified Structure}
+In this section, we proposed two modified ResNets since we need a network with less than 5 million parameters. 
+\subsection{Method 1: Decrease number of blocks in each Conv section into 1}
+For the first one, we modified the structure based on ResNet18. For each Residual block, ResNet18 has 2 blocks, we changed it into one block. The structure is shown in Figure 5. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{6.png}
+	\caption{Method 1: Decrease number of blocks in each Conv section into 1}
+\end{figure}
+From codes shown in Figure 6, we can verify that the  number of parameter the model has are 4.9 million. We proposed two models and trained them with both SGD and Adam optimizer.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{6.2.png}
+	\caption{Number of Parameters: 4.9M}
+\end{figure}
+\subsection{Training with SGD}
+After training for 60 epochs, which uses about 15 minutes on RTX8000, we get results shown in Figure 7 and 8. For this part, I use SGD with momentum as optimizer and an initial learning rate of 0.1. Also, a learning rate scheduler is introduced. Specifically, I use CosineAnnealingLR provided by Pytorch.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{7.1.png}
+	\caption{Losses for Self Modified ResNet V1 using SGD}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{7.2.png}
+	\caption{Accuracies for Self Modified ResNet V1 using SGD}
+\end{figure}
+Using codes in Figure 9, we obtain the result shown in table:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{6.3.png}
+	\caption{Maximum Accuracy of Self Modified ResNet using SGD}
+\end{figure}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    Self-Modified ResNet(SGD) & 89.552\%  & 86.45\%  \\
+	\end{tabular}
+	\caption{Result for Self modified ResNet V1 using SGD}
+\end{table}
+\subsection{Training with Adam}
+Same as above, with the same model structure, I use Adam optimizer this time. The result is shown in Figure 10 and Figure 11.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{7.3.png}
+	\caption{Losses for Self Modified ResNet V1 using Adam}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{7.4.png}
+	\caption{Accuracies for Self Modified ResNet V1 using Adam}
+\end{figure}
+Using codes in Figure 12, we obtain the result shown in table
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{7.5.png}
+	\caption{Maximum Accuracy of Self Modified ResNet V1 using Adam}
+\end{figure}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    Self-Modified ResNet(Adam) & 94.818\%  & 88.42\%  \\
+	\end{tabular}
+	\caption{Result for Self modified ResNet V1}
+\end{table}
+From the above experiments, we can conclude that by using Adam optimizer, we improved the performance of our model by 2\% to 88.42\%.
+\subsection{Method 2: Decrease $3_{rd}$ Dimension of Conv Layers into 128}
+As we know, the majority of trainable parameters is introduced at the point when we connect the last convolution layer and the first Linear layer. By reducing the dimension of latter part of Conv blocks, we can drastically reduce the number of trainable parameters. A structural comparison of our model with classical ResNet-18 is shown in figure 13. With such modification, we further decrease the amount of parameters down to 1.8 million(as shown in Figure 14).
+\begin{figure}[H]
+	\includegraphics[width=0.9\columnwidth]{8.2.png}
+	\caption{Convolutional part of Self-modified ResNet V2}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=0.9\columnwidth]{8.1.png}
+	\caption{Number of Parameters: 1.8 million}
+\end{figure}
+\subsection{Training with SGD}
+Similar to the above experiments in Method 1, I trained the model for 60 epochs and using a initial learning rate of 0.1 along with a Cosine learning rate scheduler, which obviously has a $T_max$ of 60 as well. Eventually, we have the result shown in Figure 15 and 16. The performance is quite surprisingly good. We have a accuracy
+over 94\% very quickly(less than 15 minute training time on RTX8000).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.3.png}
+	\caption{Losses for Self Modified ResNet V2 using SGD}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.4.png}
+	\caption{Accuracies for Self Modified ResNet V2 using SGD}
+\end{figure}
+Using codes in Figure 12, we obtain the result shown in table
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.4.2.png}
+	\caption{Maximum Accuracy of Self Modified ResNet V2 using SGD}
+\end{figure}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    Self-Modified ResNet(Adam) & 99.812\%  & 94.21\%  \\
+	\end{tabular}
+	\caption{Result for Self modified ResNet V2 using SGD}
+\end{table}
+\subsection{Training with Adam}
+Same as above, with the same model structure, I use Adam optimizer this time. The result is shown in Figure  and Figure 11.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.5.png}
+	\caption{Losses for Self Modified ResNet V2 using Adam}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.6.png}
+	\caption{Accuracies for Self Modified ResNet V2 using Adam}
+\end{figure}
+Using codes in Figure 12, we obtain the result shown in table
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{8.7.png}
+	\caption{Maximum Accuracy of Self Modified ResNet V2 using Adam}
+\end{figure}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    Self-Modified ResNet(Adam) & 98.132\%  & 90.98\%  \\
+	\end{tabular}
+	\caption{Result for Self modified ResNet V2 using Adam}
+\end{table}
+\section{Conclusion}
+Above all, we proposed two ways of modifications: 1. decrease number of convolutional blocks down to 1 for each convolution section; 2. Decrease 3rd Dimension of Convolution Layers into 128 for latter part of the network. For each method, we trained with two optimizers from scratch. Eventually we have result shown in Table 6. As we can see, we achieved a highest accuracy of 94\% on test set with the second method using SGD. 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{l|l|l}
+    Model & Train Acc & Test Acc\\
+    Self-Modified ResNet V1 (SGD) & 89.552\%  & 86.45\%  \\
+    Self-Modified ResNet V1 (Adam) & 94.818\%  & 88.42\%  \\
+    Self-Modified ResNet V2 (SGD) & 99.812\%  & 94.21\%  \\
+    Self-Modified ResNet V2 (Adam) & 98.132\%  & 90.98\%  \\
+	\end{tabular}
+	\caption{Result for Self modified ResNet V2}
+\end{table}
+\bibliography{aaai23}
+\end{document}
